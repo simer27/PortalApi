@@ -18,6 +18,7 @@ namespace smartfy.portal_api.domain.Entities
         }
 
 
+
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {
             builder.HasKey(c => c.Id);
