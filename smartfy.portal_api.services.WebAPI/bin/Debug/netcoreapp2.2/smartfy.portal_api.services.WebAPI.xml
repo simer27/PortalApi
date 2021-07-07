@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>smartfy.portal_api.services.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.AuthController.SignIn(smartfy.portal_api.Infra.CrossCutting.Identity.Entities.AccountViewModels.LoginViewModel)">
+            <summary>
+            Autentica usuário e gera o token JWT
+            </summary>
+            <param name="vm">
+            LoginViewModel:
+            Email, Password
+            </param>
+            <returns>Token JWT</returns>
+        </member>
+        <member name="T:smartfy.portal_api.services.WebAPI.Controllers.ClienteController">
+            <summary>
+            Class
+            </summary>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.ClienteController.#ctor(smartfy.portal_api.Infra.CrossCutting.Identity.Data.ApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="db"></param>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.ClienteController.Get">
+            <summary>
+            Retorna Lista de Clientes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.ClienteController.Get(System.Guid)">
+            <summary>
+            Retorna um item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:smartfy.portal_api.services.WebAPI.Controllers.DespachoController">
+            <summary>
+            Class
+            </summary>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.DespachoController.#ctor(smartfy.portal_api.Infra.CrossCutting.Identity.Data.ApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="db"></param>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.DespachoController.Get">
+            <summary>
+            Retorna Lista de Despachos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.DespachoController.Get(System.Guid)">
+            <summary>
+            Retorna um item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:smartfy.portal_api.services.WebAPI.Controllers.ProdutoController">
+            <summary>
+            Class
+            </summary>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.ProdutoController.#ctor(smartfy.portal_api.Infra.CrossCutting.Identity.Data.ApplicationDbContext,AutoMapper.IMapper)">
+            <summary>
+            Construtor
+            </summary>
+            <param name="db"></param>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.ProdutoController.Get">
+            <summary>
+            Retorna Lista de Clientes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:smartfy.portal_api.services.WebAPI.Controllers.ProdutoController.Get(System.Guid)">
+            <summary>
+            Retorna um item
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

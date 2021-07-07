@@ -1,0 +1,118 @@
+﻿@model AlunoVM
+
+<fieldset class="fieldset">
+    <form asp-action="Pesquisa" id="myform">
+
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-12">
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <div class="card-title"><h6>Filtros</h6></div>
+                        <div class="row">
+                            <div class="col-1">
+                                <div class="form-group">
+                                    <label class="control-label">Matricula</label>
+                                    <input asp-for="FilterMatricula" class="form-control form-control-sm" />
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="form-group">
+                                    <label class="control-label">Nome</label>
+                                    <input asp-for="FilterNome" id="FilterCPF" name="FilterCPF" class="form-control form-control-sm" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <label class="control-label">Idade</label>
+                                    <input asp-for="FilterIdade" class="form-control form-control-sm" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-3">
+                                <div class="form-group">
+                                    <label class="control-label"></label>
+                                    <input type="submit" value="Pesquisar" class="btn btn-success w-150" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>
+
+<fieldset class="fieldset">
+    <legend></legend>
+    <div class="row-fluid">
+        <div class="span6">
+            @Html.AntiForgeryToken()
+            <table id="dtX" class="table-responsive-sm table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Matricula</th>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Aluno aluno in Model.Alunos)
+                    {
+                        <tr id="@aluno.Id" role="row">
+                            <td>@aluno.Matricula</td>
+                            <td>@aluno.Nome</td>
+                            <td>@aluno.Idade</td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</fieldset>
+
+<br />
+
+<!-- PUSH JS likes-->
+@section Scripts
+{
+    <script>
+
+        $('#dtX').dataTable({
+            lengthMenu: [25, 50, 75, 100],
+            dom: 'Bf<"toolbar">rtip',
+            bProcessing: true,
+            bServerSide: false,
+            bSearch: true,
+            colReorder: true,
+            autoFill: true,
+            keys: true,
+            select: true,
+            "rowCallback": rollCallBackEx,
+            buttons: [
+                {
+                    extend: 'print',
+                    text: 'Imprimir',
+                    className: 'btn btn-primary btn-sm'
+                },
+                {
+                    extend: 'copy',
+                    text: 'Copiar',
+                    className: 'btn btn-success btn-sm'
+                },
+                {
+                    extend: 'excel',
+                    className: 'btn btn-warning btn-sm'
+                },
+                {
+                    extend: 'pdf',
+                    className: 'btn btn-danger btn-sm'
+                }
+            ]
+        });
+
+    </script>
+}
